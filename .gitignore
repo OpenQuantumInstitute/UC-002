@@ -1,0 +1,12 @@
+.env
+.venv
+.conda
+.vscode
+__pycache__
+Constraints/
+CQM_Models/
+DWave_Results/
+PuLP_Results/
+.github/
+*.pickle
+*.cqm
