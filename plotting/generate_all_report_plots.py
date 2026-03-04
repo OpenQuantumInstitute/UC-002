@@ -329,9 +329,10 @@ class GurobiRun:
 
 # Default paths (relative to project root)
 PROJECT_ROOT = Path(__file__).parent
-DEFAULT_QPU_HIER_PATH = PROJECT_ROOT / "qpu_hier_repaired.json"
-DEFAULT_GUROBI_60S_PATH = PROJECT_ROOT / "gurobi_baseline_60s.json"
-DEFAULT_GUROBI_300S_DIR = PROJECT_ROOT / "@todo" / "gurobi_timeout_verification"
+REPO_ROOT = PROJECT_ROOT.parent
+DEFAULT_QPU_HIER_PATH = REPO_ROOT / "data" / "benchmark_results" / "study3" / "qpu_hier_repaired.json"
+DEFAULT_GUROBI_60S_PATH = REPO_ROOT / "data" / "benchmark_results" / "study3" / "gurobi_baseline_60s.json"
+DEFAULT_GUROBI_300S_DIR = REPO_ROOT / "data" / "benchmark_results" / "study3"
 # The specific 300s file used in original assess_violation_impact.py and deep_dive_gap_analysis.py
 DEFAULT_GUROBI_300S_FILE = DEFAULT_GUROBI_300S_DIR / "gurobi_timeout_test_20251224_103144.json"
 DEFAULT_OUTPUT_DIR = PROJECT_ROOT / "phase3_results_plots"
@@ -2559,7 +2560,7 @@ def _load_qpu_benchmark_data() -> dict[str, Any]:
     into a unified data structure.
     """
     project_root = Path(__file__).parent
-    qpu_results_dir = project_root / "@todo" / "qpu_benchmark_results"
+    qpu_results_dir = project_root.parent / "data" / "benchmark_results" / "study2"
 
     data = {"small_scale": None, "large_scale": None, "hybridgrid": None, "hybridgrid_large": None}
 

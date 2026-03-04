@@ -11,12 +11,14 @@ This module provides functionality to convert various optimization problems to Q
 """
 
 import numpy as np
-from typing import Dict, List, Tuple, Optional, Union, Callable
+from typing import Dict, List, Tuple, Optional, Union, Callable, TYPE_CHECKING
 from dataclasses import dataclass
 import logging
 from enum import Enum
 import networkx as nx
-from dwave_interface.optimization import FoodProductionOptimizer
+
+if TYPE_CHECKING:
+    from dwave_interface.optimization import FoodProductionOptimizer
 
 class VariableType(Enum):
     """Types of variables in the optimization problem."""

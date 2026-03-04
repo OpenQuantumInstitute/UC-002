@@ -9,10 +9,6 @@ This script:
 5. Saves all constraints for verification
 """
 
-import pulp as pl
-from dwave.system import LeapHybridCQMSampler
-from dimod import ConstrainedQuadraticModel, Binary, Real
-from src.scenarios import load_food_data
 import os
 import sys
 import json
@@ -20,11 +16,17 @@ import pickle
 import shutil
 import time
 from datetime import datetime
-from tqdm import tqdm
 
-# Add project root to path
+# Add project root to path (must precede project-internal imports)
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-sys.path.append(project_root)
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
+
+import pulp as pl
+from dwave.system import LeapHybridCQMSampler
+from dimod import ConstrainedQuadraticModel, Binary, Real
+from src.scenarios import load_food_data
+from tqdm import tqdm
 
 
 def create_cqm(farms, foods, food_groups, config):

@@ -436,7 +436,11 @@ def main():
     print("COMPARISON WITH GUROBI (300s timeout)")
     print("=" * 100)
     
-    gurobi_path = '@todo/gurobi_timeout_verification/gurobi_timeout_test_20251224_103144.json'
+    gurobi_path = os.path.join(
+        os.path.dirname(os.path.dirname(__file__)),
+        'data', 'benchmark_results', 'study3',
+        'gurobi_timeout_test_20251224_103144.json'
+    )
     if Path(gurobi_path).exists():
         with open(gurobi_path) as f:
             gurobi_data = json.load(f)

@@ -11,8 +11,8 @@ Study 3: Quantum Advantage Demo - Formulation B (6 families, rotation)
 
 Data Sources:
 - Study 1: Benchmarks/COMPREHENSIVE/comprehensive_benchmark_configs_dwave_*.json
-- Study 2: @todo/qpu_benchmark_results/qpu_benchmark_20251201_*.json
-- Study 3: qpu_hier_repaired.json + @todo/gurobi_timeout_verification/gurobi_timeout_300s_20251222_*.json
+- Study 2: data/benchmark_results/study2/qpu_benchmark_20251201_*.json
+- Study 3: data/benchmark_results/study3/qpu_hier_repaired.json + data/benchmark_results/study3/gurobi_timeout_*.json
 """
 
 import json
@@ -175,7 +175,7 @@ def load_study2_data() -> dict:
     """Load Study 2: 8 Decomposition methods benchmark data."""
     print("\n📊 Loading Study 2 data...")
     
-    benchmark_dir = DATA_DIR / "@todo" / "qpu_benchmark_results"
+    benchmark_dir = DATA_DIR.parent / "data" / "benchmark_results" / "study2"
     
     # Files with all 8 methods
     target_files = [
@@ -243,14 +243,14 @@ def load_study3_data() -> dict:
     print("\n📊 Loading Study 3 data...")
     
     # QPU hierarchical results
-    qpu_file = DATA_DIR / "qpu_hier_repaired.json"
+    qpu_file = DATA_DIR.parent / "data" / "benchmark_results" / "study3" / "qpu_hier_repaired.json"
     qpu_data = load_json(qpu_file)
     
     # Try multiple Gurobi sources in order of preference
     gurobi_data = None
     
     # 1. Try gurobi_timeout_verification folder (300s tests)
-    gurobi_dir = DATA_DIR / "@todo" / "gurobi_timeout_verification"
+    gurobi_dir = DATA_DIR.parent / "data" / "benchmark_results" / "study3"
     gurobi_files = sorted(gurobi_dir.glob("gurobi_timeout_test_*.json"), 
                           key=lambda p: p.stat().st_mtime, reverse=True)
     
