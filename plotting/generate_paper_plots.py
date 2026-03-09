@@ -9,6 +9,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 from matplotlib.ticker import ScalarFormatter
+from pathlib import Path
 import os
 
 # Set publication-quality defaults
@@ -40,9 +41,10 @@ COLORS = {
 
 def load_results():
     """Load QPU and Gurobi results."""
-    with open('qpu_hier_repaired.json') as f:
+    data_dir = Path(__file__).parent.parent / "data" / "benchmark_results" / "study3"
+    with open(data_dir / 'qpu_hier_repaired.json') as f:
         qpu = json.load(f)
-    with open('gurobi_baseline_60s.json') as f:
+    with open(data_dir / 'gurobi_baseline_60s.json') as f:
         gurobi = json.load(f)
     return qpu, gurobi
 

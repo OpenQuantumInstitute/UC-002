@@ -1,0 +1,13 @@
+study1_hybrid_performance.pdf
+qpu_benchmark_small_scale.pdf
+qpu_benchmark_large_scale.pdf
+qpu_benchmark_comprehensive.pdf
+quantum_advantage_comprehensive_scaling.pdf
+qpu_advantage_corrected.pdf
+quantum_advantage_split_analysis.pdf
+violation_impact_assessment.pdf
+crop_benefit_heatmap.pdf
+scaling_objectives_by_farms.pdf
+scaling_objectives_by_vars.pdf
+scaling_qpu_breakdown_by_farms.pdf
+scaling_qpu_breakdown_by_vars.pdf

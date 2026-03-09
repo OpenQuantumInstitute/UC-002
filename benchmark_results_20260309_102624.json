@@ -1,0 +1,30 @@
+[
+  {
+    "n_farms": 5,
+    "n_foods": 27,
+    "n_vars": 270,
+    "n_constraints": 325,
+    "problem_size": 135,
+    "pulp_time": 0.03243613243103027,
+    "pulp_status": "Optimal",
+    "pulp_objective": 0.42332847720849676,
+    "dwave_time": null,
+    "qpu_time": null,
+    "hybrid_time": null,
+    "dwave_feasible": false
+  },
+  {
+    "n_farms": 6,
+    "n_foods": 27,
+    "n_vars": 324,
+    "n_constraints": 390,
+    "problem_size": 162,
+    "pulp_time": 0.041411638259887695,
+    "pulp_status": "Optimal",
+    "pulp_objective": 0.4249960202594011,
+    "dwave_time": null,
+    "qpu_time": null,
+    "hybrid_time": null,
+    "dwave_feasible": false
+  }
+]

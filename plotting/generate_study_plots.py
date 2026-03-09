@@ -96,7 +96,7 @@ def load_study1_data() -> dict:
     print("\n📊 Loading Study 1 data...")
     
     # Primary file with multi-scale results
-    benchmark_dir = DATA_DIR / "Benchmarks" / "COMPREHENSIVE"
+    benchmark_dir = DATA_DIR.parent / "data" / "benchmark_results" / "study1"
     
     # Find the best comprehensive file
     candidates = list(benchmark_dir.glob("comprehensive_benchmark_configs_dwave_*.json"))

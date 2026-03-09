@@ -1,0 +1,23 @@
+{
+  "timestamp": "20260309_102655",
+  "sampler": "sa",
+  "timeout": 1.0,
+  "modes": [
+    "qpu-native-6-family"
+  ],
+  "scenarios": [
+    "rotation_micro_25"
+  ],
+  "total_runs": 1,
+  "success_count": 0,
+  "fail_count": 1,
+  "results": [
+    {
+      "mode": "qpu-native-6-family",
+      "scenario": "rotation_micro_25",
+      "success": false,
+      "output_file": "benchmark_qpu_native_6_family_rotation_micro_25_20260309_102655.json",
+      "returncode": 2
+    }
+  ]
+}
